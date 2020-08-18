@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
+body {
+    font-family: Work Sans, sans-serif;
+    background-color: #2a2a2a;
+    font-size: 15pt;
+    /* Make body full width */
+    margin: 0;
+}
+
+a {
+    color: #00bcd4;
+}
+
+nav {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    color: white;
+    font-size: 15px;
+    background-color:black;
+    z-index: 9001;
+    transition: height 0.2s;
+}
+
+nav.small {
+    height: 40px;
+}
+
+nav.small #header {
+    font-size: 15px;
+}
+
+nav.small * {
+    line-height: 40px;
+}
+
+nav * {
+    display: inline-block;
+    text-align: center;
+    line-height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: top;
+    transition: line-height 0.2s, font-size 0.2s;
+}
+
+nav span#header {
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: line-height 0.2s, background-color 0.5s;
+}
+
+nav a:hover {
+    background-color: #00bcd4;
+}
+
+div#wrapper {
+    position: relative;
+    top: 100px;
+    width: 80%;
+    min-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    display: flex;
+}
+
+main {
+    width: 70%;
+    background-color: #151515;
+    margin-left:30%;
+    padding: 0;
+    z-index: 3;
+}
+
+aside {
+    width: 30%;
+    padding-top: 30px;
+    color: white;
+    background-color: black;
+}
+
+div#ghost-wrapper {
+    position: absolute;
+    width: 100%;
+    background-color: #151515;
+    z-index: 2;
+}
+
+aside img {
+    width: 60%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 700px) {
+}
+
+@media only screen and (max-width: 700px) {
+    div#wrapper {
+        position: absolute;
+        left: 0px;
+        top: 100px;
+        display: block;
+        width: 100%;
+    }
+    aside {
+        display: block;
+        width: 100%;
+    }
+    aside img {
+        width: 10%;
+        margin-left: 30px;
+        margin-right: 30px;
+        float: left;
+    }
+    main {
+        display: block;
+        width: 100%;
+    }
+}
+
+#projects > div {
+    width: 30%;
+    background-color: black;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1px;
+}
+
+h1 {
+    border-bottom: 4px solid #00bcd4;
+    padding-left: 20px;
+    color: white;
+}
+
+section {
+    background-color: white;
+    border-radius: 20px;
+    font-family: 'Work Sans', 'Segoe UI', sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+section :first-child {
+    margin-top: 0px;
+}
+
+section :last-child {
+    margin-bottom: 0px;
+}
+
+section h2 {
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+aside.fixed {
+    position: fixed;
+    top: 40px;
+    width: 24%;
+}
+
+aside > p {
+    padding: 10px;
+}
+
+aside > p:last-child {
+    margin-bottom: 0;
+}
+
+aside > table {
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 10px;
+    table-layout: fixed;
+}
+
+aside > table, aside > p {
+    transition: all 0.5s;
+    border-left: 4px solid #00bcd4;
+    border-right: 4px solid #00bcd4;
+}
+
+aside td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+aside td:first-child {
+    width: 25%;
+}
+
+aside > table:hover, aside > p:hover {
+     background-color: #151515;
+}
+
+

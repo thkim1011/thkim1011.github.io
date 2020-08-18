@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+  Blog
+</title>
+    <link href="/styles/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/mathjax-config.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <nav>
+      <span id="header">Tae Hyung Kim
+      </span><a href="/">About Me
+      </a><a href="/notes.html">Notes
+      </a><a href="/blog.html">Blog
+      </a><a href="https://drive.google.com/file/d/1f895k0UdnEVxaK_VJcUDUcUPHL9rgiHR/view?usp=sharing">Resume</a>
+    </nav>
+
+    <div id="wrapper">
+      <div id="ghost-wrapper">
+        <aside>
+          <img src="/images/self.jpg">
+          <p>
+          Undergraduate at UC Berkeley. B.A. in Computer Science and
+          Mathematics.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Email:</td>
+                <td>thkim1011 [at] berkeley.edu</td>
+              </tr>
+              <tr>
+                <td>Github:</td>
+                <td><a href="https://github.com/thkim1011">https://github.com/thkim1011</a></td>
+              </tr>
+              <tr>
+                <td>LinkedIn:</td>
+                <td><a href="https://linkedin.com/in/thkim1011/">https://linkedin.com/in/thkim1011/</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+      </div>
+      <main>
+        
+  <h1># Fubini&#39;s Theorem</h1>
+
+  <section><p>Fubini's theorem is one of the theorems whose formulation and proof is slightly more involved when learning it in analysis courses, in both the case when we are working with Darboux integrals and Lebesgue integrals. In this post, we will formalize all of the small details for both cases and prove Fubini's theorem.</p>
+<h2>The Darboux Case</h2>
+<p>Most of the presentation for Darboux integrals is based on the one given in Michael Spivak's Calculus on Manifolds.</p>
+<p>First we clarify some definitions. Suppose that $A$ were a closed interval $[a, b]$. When we talk about Riemann/Darboux integrals in $\mathbb R$, we use a <strong>partition</strong> $\mathcal P$ of $A$ given by a sequence of increasing reals such that
+$$ a = t_1 &lt; t_2 &lt; \cdots &lt; t_k = b. $$ We say that the subintervals of this partitions are $[t_1, t_2], \cdots [t_{k - 1}, t_k]$. Equivalently, we can characterize a partition by the subintervals $S_1, \dots, S_n$. Now more generally, suppose that $A = [a_1, b_1] \times [a_2, b_2] \times \cdots \times [a_n, b_n]$ is a closed rectangle in $\mathbb R^n$. We define a <strong>partition</strong> of $A$ to be a collection of partitions $\mathcal P_i$ of each interval $[a_i, b_i]$. The <strong>subrectangles</strong> of this partition $\{\mathcal P_i\}_{i = 1}^n = \{(S_{i1}, \dots, S_{ik_i})\}_{i = 1}^n$ are the cartesian products $S_{1j_1} \times S_{2j_2} \times \cdots \times S_{nj_n}$.</p>
+<p>Now, given a partition $\mathcal P$ of some rectangle $A \subseteq \mathbb R^n$ and some function $f: A \to \mathbb R$, we can define the <strong>lower and upper Darboux sums</strong> as follows:
+$$ \mathcal L(f, \mathcal P) = \sum_{S \in \mathcal P} \left(\inf_{x \in S} f(x) \right) \mu(S) \quad \text{and} \quad
+\mathcal U(f, \mathcal  P) = \sum_{S \in \mathcal P} \left(\sup_{x \in S} f(x) \right) \mu(S)$$ where by $S \in \mathcal P$, we mean the subrectangles of the partition and $\mu(S)$ is the volume of the subrectangle. Such a function $f$ is <strong>integrable</strong> if
+$$ \sup_{\mathcal P} \mathcal L(f, \mathcal P) = \inf_{\mathcal P} \mathcal U(f, \mathcal P), $$
+and the <strong>integral</strong> of $f$ is this value, which we denote by $\int f$.</p>
+<p>This clears up most of the terminology that we'll be using throughout this post. Now, recall that <strong>Fubini's theorem</strong> allows us to iteratively integrate. More specifically, for continuous functions $f: A \times B \to \mathbb R$ with rectangles $A, B$, it is true that
+$$ \int_{A \times B} f = \int_A \int_B (y \mapsto f(x, y)) = \int_A \left(\int_B f(x, y) \, dy\right) \, dx .$$
+This precise statement is actually false in the case of integrable functions $f$. Recall that a function is Darboux integrable if and only if $f$ is discontinuous on a measure $0$ set. Such a function $f: A \times B \to \mathbb R$ may be discontinuous on a measure $0$ set, but this set of discontinuities may not be measure zero when we consider either $x \mapsto f(x, y)$ or $y \mapsto f(x, y)$, which suggests that some of the integral in Fubini's theorem may not even exist.</p>
+<p>Fortunately, this state of affairs can be remedied by considering <strong>lower and upper integrals</strong>. Whether integrable or not, a bounded function $g$ on $A$ must have lower and upper integrals
+$$ \mathbf L \int_A g = \sup_{\mathcal P} \mathcal L(g, \mathcal P) \quad \text{and} \quad \mathbf U \int_A g = \inf_{\mathcal P} \mathcal U(g, \mathcal P). $$
+All integrable functions are bounded (think about why!) which allows us to always use lower and upper integrals in Fubini's theorem.</p>
+<p>Here is the most general (Darboux) statement of Fubini's theorem. Let $A \subseteq \mathbb R^n, B \subseteq \mathbb R^m$ be closed rectangles, and let $f : A \times B \to \mathbb R$ be integrable. Then the two lower and upper integrals
+$$ \mathbf L \int_B (y \mapsto f(x, y)) \quad\text{and}\quad \mathbf U \int_B(y \mapsto f(x, y)) $$ integrable over $x \in A$. Furthermore,
+$$ \begin{aligned}
+\int_{A \times B} f &amp; = \int_A \left(x \mapsto \mathbf L\int_B(y \mapsto f(x, y))\right) = \int_A \left(\mathbf L \int_B f(x, y) \, dy\right) \, dx \\
+\int_{A \times B} f &amp; = \int_A \left(x \mapsto \mathbf U \int_B (y \mapsto f(x, y)) \right) = \int_A \left(\mathbf U \int_B f(x, y) \, dy\right) \, dx.
+\end{aligned}$$</p>
+<p>The approach we're going to take is the following. Take some partition $\mathcal P$ of $A$ and $\mathcal Q$ of $B$. If we show that
+$$ \begin{aligned}
+\mathcal L(f, \mathcal P \times \mathcal Q) &amp; \le \mathcal L\left(x \mapsto \mathbf L \int_B (y \mapsto f(x, y)), \mathcal P\right) \\
+&amp; \le \mathcal U \left(x \mapsto \mathbf L\int_B (y \mapsto f(x, y)), \mathcal P\right) \\
+&amp; \le \mathcal U \left(x \mapsto \mathbf U\int_B (y \mapsto f(x, y)), \mathcal P \right) \le \mathcal U (f, \mathcal P \times \mathcal Q).
+\end{aligned}$$ Since we know that $\sup_{\mathcal P, \mathcal Q} \mathcal L(f, \mathcal P \times \mathcal Q) = \inf_{\mathcal P, \mathcal Q} \mathcal U(f, \mathcal P \times \mathcal Q)$, this must hold for $x \mapsto \mathbf L \int_B( y \mapsto f(x, y))$ as well. We can then prove the same for $x \mapsto \mathbf U \int_B(y \mapsto f(x, y))$.</p>
+<p>We'll approach each of the inequalities in the chain one at a time. First, note that for some fixed $x$, we must always have
+$$ \mathcal L(f, \mathcal P \times Q) = $$</p>
+</section>
+
+
+      </main>
+    </div>
+  </body>
+</html>

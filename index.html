@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About Me</title>
+    <link href="/styles/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/mathjax-config.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <nav>
+      <span id="header">Tae Hyung Kim
+      </span><a href="/">About Me
+      </a><a href="/notes.html">Notes
+      </a><a href="/blog.html">Blog
+      </a><a href="https://drive.google.com/file/d/1f895k0UdnEVxaK_VJcUDUcUPHL9rgiHR/view?usp=sharing">Resume</a>
+    </nav>
+
+    <div id="wrapper">
+      <div id="ghost-wrapper">
+        <aside>
+          <img src="/images/self.jpg">
+          <p>
+          Undergraduate at UC Berkeley. B.A. in Computer Science and
+          Mathematics.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Email:</td>
+                <td>thkim1011 [at] berkeley.edu</td>
+              </tr>
+              <tr>
+                <td>Github:</td>
+                <td><a href="https://github.com/thkim1011">https://github.com/thkim1011</a></td>
+              </tr>
+              <tr>
+                <td>LinkedIn:</td>
+                <td><a href="https://linkedin.com/in/thkim1011/">https://linkedin.com/in/thkim1011/</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+      </div>
+      <main>
+        
+  <h1>About Me</h1>
+
+  <section>
+    <p>
+    I'm an undergraduate at UC Berkeley majoring in Computer Science
+    and Pure Mathematics. During my time at Berkeley, I've focused on a wide
+    variety of subjects including <a href="https://www.eecs189.org/">Machine Learning</a>,
+    <a href="http://rail.eecs.berkeley.edu/deeprlcourse/">Deep Reinforcement Learning</a>,
+    <a href="https://cs162.eecs.berkeley.edu/">Operating Systems</a>,
+    <a href="https://people.eecs.berkeley.edu/~satishr/cs270/sp17/">Combinatorial Algorithms</a>,
+    <a href="https://math.berkeley.edu/~rieffel/">Real and Functional Analysis</a>,
+    and <a href="https://math.berkeley.edu/~nadler/250afall2018">Abstract Algebra</a>.
+    I usually spend my day playing piano, solving
+    math problems, programming something new, or (as of recently) playing go.
+    I'll be primarily using my website to post my notes on some of the
+    classes I've taken or posting some random insight to my blog.
+    </p>
+
+    <h2>Work Experience</h2>
+    <p>
+      During the summer of 2020, I worked as a Software Engineer Intern at <a href="https://www.rimeto.com/">Rimeto</a> which was acquired by <a href="https://slack.com/">Slack</a> during my internship.
+      As an intern, I worked on many tasks directly relevant to the product itself, essentially performing full time work. As part of my onboarding, I was expected to make bug fixes to the internal Rimeto Outlook plugin and implement a feature for a customer in a code base
+      consisting of <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://reactjs.org/">React</a>.
+      My first project consisted of working on an ML system for extracting and clustering topics from a large dataset of wiki pages, slack conversations, and pull requests to identify the expertise of employees.
+      I was able to create the mobile frontend view for this in
+      <a href="https://reactnative.dev/">React Native</a>. I also helped develop an algorithm which would force certain keywords to cluster together, and created the internal tool to specify these hard-coded clusters.
+      As my last project of my internship, I refractored all of the legacy APIs used in the internal systems to use a more updated GraphQL framework which has consistent input and responses and improved logging features. The task also consisted of 
+      adding unit tests to any untested APIs to maximize the test coverage.
+      As a part of my internship, I also gained experience in shadowing an oncall and working as an oncall.
+    </p>
+    <p>
+    During the summer of 2019, I worked as a Software Development Intern at Amazon with the
+    <a href="https://www.amazon.com/treasuretruck">Treasure Truck</a> team.
+    My project was to create a web application for handling permissions to
+    access an internal-use Android application. I wrote the frontend in
+    <a href="https://angular.io/">Angular Typescript</a> and backend with
+    <a href="https://spring.io/">Spring Framework</a>,
+    while also working with a <a href="https://aws.amazon.com/dynamodb/">DynamoDB database</a>
+    which stored these permissions.
+    </p>
+    <p>
+    I also did research in Professor <a href="http://www.jennifer.listgarten.com/">Jennifer Listgarten's</a>
+    lab which focuses on applying Machine Learning to Biology. The project that I worked on is a novel
+    method to aggregate several datasets measured with possibly different calibrations and apply regression on
+    all of these simultaneously while achieving better results than naively applying regression on the union
+    of these datasets. The high level idea of our approach was to do so by computing the maximum likelihood model.
+    </p>
+    <h2>Projects</h2>
+    <p>
+    One of the first projects I've worked on was MIX. MIX is a hypothetical computer with a small memory
+    space and simple assembly language that was designed by Donald Knuth in order to write his renown textbooks:
+    <a href="https://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>.
+    This was my first interaction with an assembly language, so I created an
+    <a href="https://github.com/thkim1011/mix">Assembler and Simulator for MIX</a>. This was written
+    completely in Java.
+    </p>
+  </section>
+
+      </main>
+    </div>
+  </body>
+</html>
